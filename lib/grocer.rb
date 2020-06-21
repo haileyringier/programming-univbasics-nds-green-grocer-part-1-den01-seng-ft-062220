@@ -11,20 +11,17 @@ def consolidate_cart(cart)
   final_cart = []
   cart.each do |items| 
   item_exists = false
-  
     final_cart.each do |elements|
       if elements[:item] == items[:item]
         item_exists = true
         elements[:count] = elements[:count] + 1
       end
     end
-    
     if item_exists == false 
-    items[:count] = 1
-    final_cart << items
+      items[:count] = 1
+      final_cart << items
     end
-    
-    end
+  end
   return final_cart
 end
 
